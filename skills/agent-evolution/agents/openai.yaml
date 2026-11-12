@@ -1,0 +1,13 @@
+interface:
+  display_name: 智能体自进化
+  short_description: 在工作中保存科研成果，任务后可复盘，让验证过的经验跨任务复用
+  default_prompt: 用 $agent-evolution 完成这个研究任务，在工作中保存可复用成果，结束时简短盘点。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

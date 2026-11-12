@@ -1,19 +1,19 @@
-# 科学创造与元认知
+# 科学创造与元认知 · 智能体自进化
 
-[English](README.en.md) · [中文版 Skill](skills/scientific-ideation/SKILL.md) · [English Skill](skills/scientific-ideation-en/SKILL.md)
+[English README](README.en.md)
 
-一个用于科研工作的 Agent Skill。给它研究现象、文献、方案、数据或审稿意见，它从当前科研决策切入，完成相应工作，依据反馈调整策略，并交付下一步可以接手的结果。
+本仓库提供两个可独立使用或组合使用的 Agent Skill。**Skill 1 科学创造与元认知**面向一般科研工作，帮助研究者推进当前决定。**Skill 2 智能体自进化**适合具备项目记忆的智能体，在工作中保存可复用成果，任务后可盘点，并用后续证据更新做法。
 
-## 选用版本
+## 选择 Skill 和语言
 
-| 版本 | 目录 | 显式调用 |
+| Skill | 中文 | English |
 | --- | --- | --- |
-| 中文 | [scientific-ideation](skills/scientific-ideation/) | `$scientific-ideation` |
-| English | [scientific-ideation-en](skills/scientific-ideation-en/) | `$scientific-ideation-en` |
+| **1 · 科学创造与元认知** | [`scientific-ideation`](skills/scientific-ideation/) | [`scientific-ideation-en`](skills/scientific-ideation-en/) |
+| **2 · 智能体自进化** | [`agent-evolution`](skills/agent-evolution/) | [`agent-evolution-en`](skills/agent-evolution-en/) |
 
-把所选版本的完整目录放到支持 Agent Skills 的环境中。目录内的 `SKILL.md` 定义工作流，随附的科研实务操作表按需读取。通常启用一个版本即可。参见 [Agent Skills 说明](https://developers.openai.com/plugins/concepts/skills)。
+把所选版本的完整目录放到支持 Agent Skills 的环境中，以 `$` 加目录名显式调用。同一个 Skill 选用一种语言即可。每个目录的 `SKILL.md` 定义工作流，`references/` 提供按需读取的操作说明，Skill 2 的 `scripts/` 提供可选的项目记忆工具。参见 [Agent Skills 说明](https://developers.openai.com/plugins/concepts/skills)。
 
-## 从项目的当前阶段进入
+## Skill 1 · 从项目的当前阶段进入
 
 | 手里已有 | 可以交付 |
 | --- | --- |
@@ -27,9 +27,23 @@
 
 > 用 `$scientific-ideation` 看这两段方法和我的方案。我只有一次预实验预算。请先确认原研究已经回答了什么，再给出一个能改变继续或调整决定的检查。
 
+## Skill 2 · 在工作中形成可复用的记忆
+
+| 时机 | 可以保留 |
+| --- | --- |
+| 工作中形成一项成果 | 一张机制预测表、一份方法或评分规则、一个经确认的决定，附产物位置、依据、适用范围和重查条件 |
+| 任务结束时盘点 | 可复用成果、帮助推进的做法、值得检验的候选假设与适用边界 |
+| 后续任务使用时 | 哪条记录被用到、是否仍有效、是否需要替换旧版本或修改适用范围 |
+
+使用元认知定位需要调整的地方，用科学创造力产生和检验构思。完成的设计稿可以直接登记，稿件中的科学假设继续标为待检验。一次有效的做法可以保留为候选，成为默认程序记忆前，用新任务和回归案例验证。
+
+> 用 `$agent-evolution` 继续设计实验。在读文献的过程中保存可复用的预测表和阶段决定，结束时简短盘点。把尚未验证的解释和做法标为候选。
+
+优先使用宿主实际加载的项目记忆。文件型工具可将成果记录写入 `.agent-evolution/entries/`，按关键词和范围检索，以 `.agent-evolution/MEMORY.md` 保存可回滚的长期记忆。若要每个任务结束都盘点，需要在目标项目实际读取的入口配置，并在新会话验证读取。详见 [记忆与试验操作](skills/agent-evolution/references/operations.md) 和 [产品机制与接入](skills/agent-evolution/references/product-patterns.md)。
+
 ## 设计依据
 
-Skill 正文链接直接采用的三个框架。其他研究依据集中列在本页。人的认知研究提供设计启发，LLM 研究帮助界定可观察的智能体行为。这里给出的是工作流，效果需要用实际科研任务评估。
+两个 Skill 共用创造性元认知、Geneplore 和双空间搜索框架。Skill 2 另用 CoALA 组织项目记忆。研究依据列在本页。人的认知研究提供设计启发，LLM 研究帮助界定可观察的智能体行为。这里给出的是工作流，效果需要用实际科研任务评估。
 
 ### 直接进入 Skill 的框架
 
@@ -70,3 +84,8 @@ Skill 正文链接直接采用的三个框架。其他研究依据集中列在�
 - Xiong, M., et al. (2024). Can LLMs express their uncertainty? An empirical evaluation of confidence elicitation in LLMs. *ICLR*. 提示对模型自报信心和实际准确性分别评估。 [来源](https://proceedings.iclr.cc/paper_files/paper/2024/hash/6733cf15e10e2cd1d59af033c3bb8507-Abstract-Conference.html)
 - Si, C., Yang, D., & Hashimoto, T. (2025). Can LLMs generate novel research ideas? A large-scale human study with 100+ NLP researchers. *ICLR*. 在 NLP 构思中分别检验新颖性、可行性，并观察到多样性与自评的局限。 [来源](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ea94957d81b1c1caf87ef5319fa6b467-Abstract-Conference.html)
 - Liu, Y., et al. (2026). Perspectra: Choosing your experts enhances critical thinking in multi-agent research ideation. *CHI*. 为研究者掌控讨论分支与视角提供人机协作例子。 [来源](https://doi.org/10.1145/3772318.3791560)
+
+### Skill 2 的记忆机制
+
+- Sumers, T. R., Yao, S., Narasimhan, K., & Griffiths, T. L. (2024). *Cognitive architectures for language agents*. Transactions on Machine Learning Research. CoALA 为区分任务经历、事实知识和程序性做法提供结构。 [来源](https://openreview.net/pdf/07475727a2787df12052196b9f2624497ef3c3bd.pdf)
+- 工作中捕捉、任务后审阅、按范围调用和版本恢复的产品参考，见 [产品机制与接入](skills/agent-evolution/references/product-patterns.md)。

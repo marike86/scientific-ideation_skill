@@ -1,19 +1,19 @@
-# Scientific Ideation and Metacognition
+# Scientific Ideation and Agent Evolution
 
-[中文](README.md) · [English Skill](skills/scientific-ideation-en/SKILL.md) · [中文版 Skill](skills/scientific-ideation/SKILL.md)
+[中文 README](README.md)
 
-An Agent Skill for scientific research. Give it an observation, paper, protocol, dataset, or review comment. It identifies the research decision at hand, does the relevant work, adapts to feedback, and hands over a result you can use.
+This repository provides two Agent Skills that can be used independently or together. **Skill 1, Scientific Ideation and Metacognition**, helps researchers make and act on the decision at hand. **Skill 2, Agent Evolution**, helps an agent with project memory capture reusable outcomes during work, review tasks afterward, and improve its practices as new evidence arrives.
 
-## Choose a version
+## Choose a Skill and language
 
-| Version | Directory | Explicit invocation |
+| Skill | English | 中文 |
 | --- | --- | --- |
-| English | [scientific-ideation-en](skills/scientific-ideation-en/) | `$scientific-ideation-en` |
-| 中文 | [scientific-ideation](skills/scientific-ideation/) | `$scientific-ideation` |
+| **1 · Scientific Ideation and Metacognition** | [`scientific-ideation-en`](skills/scientific-ideation-en/) | [`scientific-ideation`](skills/scientific-ideation/) |
+| **2 · Agent Evolution** | [`agent-evolution-en`](skills/agent-evolution-en/) | [`agent-evolution`](skills/agent-evolution/) |
 
-Place the complete directory for your preferred version in an Agent Skills-compatible environment. Its `SKILL.md` defines the workflow. The accompanying research playbook is read as needed. One active version is usually enough. See the [Agent Skills documentation](https://developers.openai.com/plugins/concepts/skills).
+Place the complete directory for the selected edition in an Agent Skills-compatible environment. Invoke it explicitly with `$` followed by the directory name. Choose one language per Skill. Each `SKILL.md` defines a workflow, `references/` contains guidance for on-demand reading, and Skill 2's `scripts/` provides an optional project memory utility. See the [Agent Skills documentation](https://developers.openai.com/plugins/concepts/skills).
 
-## Enter at the current research stage
+## Skill 1 · Enter at the current research stage
 
 | Starting material | Possible deliverable |
 | --- | --- |
@@ -27,9 +27,23 @@ The workflow is **locate the decision → do the work → adapt to feedback → 
 
 > Use `$scientific-ideation-en` to compare these two methods sections with my study plan. I can afford one pilot. Identify what the prior work already established, then propose one check that could change my decision to proceed or revise.
 
+## Skill 2 · Build reusable memory during work
+
+| When | What to retain |
+| --- | --- |
+| A useful outcome emerges | A prediction table, method, rubric, or confirmed decision, with its location, evidence, scope, and recheck trigger |
+| The task closes | Reusable outcomes, helpful practices, hypotheses worth testing, and their limits |
+| A later task uses a record | What was used, whether it still held, and whether the record or its scope should change |
+
+Use metacognition to identify what needs adjustment and scientific creativity to generate and test ideas. A finished study design can be recorded immediately, with the scientific hypotheses it contains marked as untested. A practice that worked once can be saved as a candidate. Check it on new tasks and regression cases before making it a standing rule.
+
+> Use `$agent-evolution-en` to continue the study design. Capture reusable prediction tables and decisions as they emerge, then do a short closing review. Mark untested explanations and practices as candidates.
+
+Prefer project memory the host actually loads. The optional file-based utility records outcomes under `.agent-evolution/entries/`, retrieves them by keyword and scope, and keeps durable, recoverable memory in `.agent-evolution/MEMORY.md`. To review every task, configure the project entry point that the host reads and verify retrieval in a new session. See [Memory and Evaluation Operations](skills/agent-evolution-en/references/operations.md) and [Product Patterns and Integration](skills/agent-evolution-en/references/product-patterns.md).
+
 ## Design rationale
 
-The Skill links to the three frameworks it applies directly. The remaining sources are documented here. Human cognition research informs the workflow. LLM research helps define observable agent behavior. Effectiveness is an empirical question for evaluation on research tasks.
+Both Skills use creative metacognition, Geneplore, and dual-space search. Skill 2 also uses CoALA to organize project memory. The sources are documented below. Human cognition research informs the workflow. LLM research helps define observable agent behavior. Effectiveness is an empirical question for evaluation on research tasks.
 
 ### Frameworks linked in the Skill
 
@@ -70,3 +84,8 @@ The Skill links to the three frameworks it applies directly. The remaining sourc
 - Xiong, M., et al. (2024). Can LLMs express their uncertainty? An empirical evaluation of confidence elicitation in LLMs. *ICLR*. Motivates evaluating reported confidence separately from accuracy. [Source](https://proceedings.iclr.cc/paper_files/paper/2024/hash/6733cf15e10e2cd1d59af033c3bb8507-Abstract-Conference.html)
 - Si, C., Yang, D., & Hashimoto, T. (2025). Can LLMs generate novel research ideas? A large-scale human study with 100+ NLP researchers. *ICLR*. Separates novelty and feasibility in NLP ideation and reports limits in diversity and self-evaluation. [Source](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ea94957d81b1c1caf87ef5319fa6b467-Abstract-Conference.html)
 - Liu, Y., et al. (2026). Perspectra: Choosing your experts enhances critical thinking in multi-agent research ideation. *CHI*. Illustrates researcher control over discussion branches and perspectives in human–AI collaboration. [Source](https://doi.org/10.1145/3772318.3791560)
+
+### Memory architecture for Skill 2
+
+- Sumers, T. R., Yao, S., Narasimhan, K., & Griffiths, T. L. (2024). *Cognitive architectures for language agents*. Transactions on Machine Learning Research. CoALA informs the distinction between episodes, semantic knowledge, and procedural practices. [Source](https://openreview.net/pdf/07475727a2787df12052196b9f2624497ef3c3bd.pdf)
+- For product examples of in-task capture, closing review, scoped retrieval, and version recovery, see [Product Patterns and Integration](skills/agent-evolution-en/references/product-patterns.md).
