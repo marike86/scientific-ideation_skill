@@ -1,0 +1,13 @@
+interface:
+  display_name: 科学创造与元认知
+  short_description: 从科研中的卡点出发，生成可区分的假设，用外部证据调整研究路线
+  default_prompt: 用 $scientific-ideation 帮我重构这个研究问题，并找出值得检验的机制。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

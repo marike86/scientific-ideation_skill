@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scientific Ideation and Metacognition"
+  short_description: "Make evidence-based decisions across the research workflow"
+  default_prompt: "Use $scientific-ideation-en to identify my current research decision and propose the next informative step."
