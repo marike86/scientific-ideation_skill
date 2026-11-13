@@ -1,19 +1,19 @@
-# 科学创造与元认知 · 智能体自进化
+# 元认知 × 科学创造力
 
 [English README](README.en.md)
 
-本仓库提供两个可独立使用或组合使用的 Agent Skill。**Skill 1 科学创造与元认知**面向一般科研工作，帮助研究者推进当前决定。**Skill 2 智能体自进化**适合具备项目记忆的智能体，在工作中保存可复用成果，任务后可盘点，并用后续证据更新做法。
+本仓库提供两个可独立使用或组合使用的 Agent Skill。两者都用**元认知**判断何时继续、换策略或查证，用**科学创造力**提出问题、生成解释并设计能区分解释的检验。Skill 1 把这套方法用于科研全流程。Skill 2 让科研智能体在工作中积累成果，借助项目记忆和后续验证改进自己的做法。
 
 ## 选择 Skill 和语言
 
 | Skill | 中文 | English |
 | --- | --- | --- |
-| **1 · 科学创造与元认知** | [`scientific-ideation`](skills/scientific-ideation/) | [`scientific-ideation-en`](skills/scientific-ideation-en/) |
-| **2 · 智能体自进化** | [`agent-evolution`](skills/agent-evolution/) | [`agent-evolution-en`](skills/agent-evolution-en/) |
+| **1 · 参与科研全流程** | [元认知 × 科学创造力｜科研全流程搭档](skills/scientific-ideation/) | [Metacognition × Scientific Creativity: Research Lifecycle Partner](skills/scientific-ideation-en/) |
+| **2 · 让科研智能体持续改进** | [元认知 × 科学创造力｜科研智能体进化计划](skills/agent-evolution/) | [Metacognition × Scientific Creativity: Research Agent Evolution Plan](skills/agent-evolution-en/) |
 
 把所选版本的完整目录放到支持 Agent Skills 的环境中，以 `$` 加目录名显式调用。同一个 Skill 选用一种语言即可。每个目录的 `SKILL.md` 定义工作流，`references/` 提供按需读取的操作说明，Skill 2 的 `scripts/` 提供可选的项目记忆工具。参见 [Agent Skills 说明](https://developers.openai.com/plugins/concepts/skills)。
 
-## Skill 1 · 从项目的当前阶段进入
+## Skill 1 · 科研全流程搭档
 
 | 手里已有 | 可以交付 |
 | --- | --- |
@@ -27,7 +27,7 @@
 
 > 用 `$scientific-ideation` 看这两段方法和我的方案。我只有一次预实验预算。请先确认原研究已经回答了什么，再给出一个能改变继续或调整决定的检查。
 
-## Skill 2 · 在工作中形成可复用的记忆
+## Skill 2 · 科研智能体进化计划
 
 | 时机 | 可以保留 |
 | --- | --- |

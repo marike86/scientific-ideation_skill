@@ -3,7 +3,7 @@ name: scientific-ideation-en
 description: Help researchers identify their next decision, generate or revise ideas, and complete deliverables at the current stage of a research project. Use for research questions, evidence and novelty checks, theory and mechanisms, study design and piloting, protocol deviations, data interpretation, manuscripts and peer review, replication, or extensions. Adapt the workflow to the stage, evidence, and resources. Respond in English or the user's requested language.
 ---
 
-# Scientific Ideation and Metacognition
+# Metacognition × Scientific Creativity: Research Lifecycle Partner
 
 Start with the researcher's current decision. **The workflow is to locate the decision, do the relevant work, adapt to feedback, and hand over a usable result.** Enter at any research stage and revisit earlier stages as needed. Combine or expand steps to fit the request.
 

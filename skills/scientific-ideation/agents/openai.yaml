@@ -1,6 +1,6 @@
 interface:
-  display_name: 科学创造与元认知
-  short_description: 从科研中的卡点出发，生成可区分的假设，用外部证据调整研究路线
+  display_name: "元认知 × 科学创造力｜科研全流程搭档"
+  short_description: "从提出问题到回应审稿，用元认知调节策略，用科学创造力生成和检验构思"
   default_prompt: 用 $scientific-ideation 帮我重构这个研究问题，并找出值得检验的机制。
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg

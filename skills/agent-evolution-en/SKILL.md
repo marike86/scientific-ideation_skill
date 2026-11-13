@@ -3,7 +3,7 @@ name: agent-evolution-en
 description: Apply metacognition and scientific creativity during research and complex knowledge work. Capture reusable outcomes in project memory as they emerge, then retrieve, verify, and improve them on later tasks. Use for saving research questions, hypotheses, diagnostic experiments, methods, decisions, and completed artifacts, for short post-task reviews, or for validating and rolling back durable agent practices. Use ongoing capture and review in projects where the user has enabled the memory loop.
 ---
 
-# Agent Evolution
+# Metacognition × Scientific Creativity: Research Agent Evolution Plan
 
 Use metacognition to regulate the current task and scientific creativity to generate and test ideas. Turn reusable outcomes into project memory. On later tasks, observe their value, limits, and exceptions, then update the records. **Capture can happen as work produces results. A closing review provides a second entry point.**
 

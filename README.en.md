@@ -1,19 +1,19 @@
-# Scientific Ideation and Agent Evolution
+# Metacognition × Scientific Creativity
 
 [中文 README](README.md)
 
-This repository provides two Agent Skills that can be used independently or together. **Skill 1, Scientific Ideation and Metacognition**, helps researchers make and act on the decision at hand. **Skill 2, Agent Evolution**, helps an agent with project memory capture reusable outcomes during work, review tasks afterward, and improve its practices as new evidence arrives.
+Both Agent Skills pair **metacognition**, which guides strategy selection and revision, with **scientific creativity**, which generates questions, explanations, and tests. Skill 1 applies this combination throughout the research lifecycle. Skill 2 helps a research agent improve its own practices by capturing reusable work in project memory and checking its value on later tasks.
 
 ## Choose a Skill and language
 
 | Skill | English | 中文 |
 | --- | --- | --- |
-| **1 · Scientific Ideation and Metacognition** | [`scientific-ideation-en`](skills/scientific-ideation-en/) | [`scientific-ideation`](skills/scientific-ideation/) |
-| **2 · Agent Evolution** | [`agent-evolution-en`](skills/agent-evolution-en/) | [`agent-evolution`](skills/agent-evolution/) |
+| **1 · Work across the research lifecycle** | [Metacognition × Scientific Creativity: Research Lifecycle Partner](skills/scientific-ideation-en/) | [元认知 × 科学创造力｜科研全流程搭档](skills/scientific-ideation/) |
+| **2 · Improve a research agent over time** | [Metacognition × Scientific Creativity: Research Agent Evolution Plan](skills/agent-evolution-en/) | [元认知 × 科学创造力｜科研智能体进化计划](skills/agent-evolution/) |
 
 Place the complete directory for the selected edition in an Agent Skills-compatible environment. Invoke it explicitly with `$` followed by the directory name. Choose one language per Skill. Each `SKILL.md` defines a workflow, `references/` contains guidance for on-demand reading, and Skill 2's `scripts/` provides an optional project memory utility. See the [Agent Skills documentation](https://developers.openai.com/plugins/concepts/skills).
 
-## Skill 1 · Enter at the current research stage
+## Skill 1 · Research Lifecycle Partner
 
 | Starting material | Possible deliverable |
 | --- | --- |
@@ -27,7 +27,7 @@ The workflow is **locate the decision → do the work → adapt to feedback → 
 
 > Use `$scientific-ideation-en` to compare these two methods sections with my study plan. I can afford one pilot. Identify what the prior work already established, then propose one check that could change my decision to proceed or revise.
 
-## Skill 2 · Build reusable memory during work
+## Skill 2 · Research Agent Evolution Plan
 
 | When | What to retain |
 | --- | --- |
